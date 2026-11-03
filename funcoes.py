@@ -26,3 +26,17 @@ def faz_jogada(tabuleiro, linha, coluna):
     else:   
         tabuleiro[linha][coluna] = "-"
     return tabuleiro
+
+def posiciona_frota(frota):
+    tabuleiro = []
+    i = 0
+    while i < 10:
+        tabuleiro.append([0]*10)
+        i+=1
+    for nome_navio in frota:
+        for posicoes in frota[nome_navio]:
+            for posicao in posicoes:
+                linha = posicao[0]
+                coluna = posicao[1]
+                tabuleiro[linha][coluna] = 1
+    return tabuleiro
