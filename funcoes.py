@@ -7,7 +7,7 @@ def define_posicoes (linha, coluna, orientacao, tamanho):
             i+=1
     elif orientacao == "horizontal":
         i = 0
-        while i < len(tamanho):
+        while i < tamanho:
             lista.append([linha,coluna+i])
             i+=1
     return lista
