@@ -40,3 +40,19 @@ def posiciona_frota(frota):
                 coluna = posicao[1]
                 tabuleiro[linha][coluna] = 1
     return tabuleiro
+
+def afundados(frota, tabuleiro):
+    afundados = 0
+    for nome_navio in frota:
+        for posicoes in frota[nome_navio]:
+            afundado = True
+            for posicao in posicoes:
+                linha = posicao[0]
+                coluna = posicao[1]
+                if tabuleiro[linha][coluna] != "X":
+                    afundado = False
+                    break
+            if afundado:
+                afundados += 1
+    return afundados
+
